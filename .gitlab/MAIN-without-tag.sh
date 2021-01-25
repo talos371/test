@@ -45,7 +45,7 @@ for project in "${libraries[@]}"; do
   git add .
   git commit -m "Test pipeline-$(date +%s)"
   git tag "pipeline-$(date +%s)"
-  git push origin master
+  git push origin master  --force
 
   cd ..
   printf "\n"
