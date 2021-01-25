@@ -40,12 +40,12 @@ for project in "${libraries[@]}"; do
 
   printf "Commit, tag and push...\n"
   git remote add origin https://talos371:371Talos@github.com/talos371/test.git
-  git branch -M main
   git config --global user.email "talos371@gmail.com"
+  git branch -M main
   git add .
   git commit -m "Test pipeline-$(date +%s)"
   git tag "pipeline-$(date +%s)"
-  git push origin master --tags
+  git push origin master
 
   cd ..
   printf "\n"
