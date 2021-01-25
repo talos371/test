@@ -20,8 +20,8 @@ for project in "${libraries[@]}"; do
   # shellcheck disable=SC2001
 
   authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
-  #git clone "$authenticated_address"
-  git clone --bare "$authenticated_address"
+  git clone "$authenticated_address"
+  # git clone --bare "$authenticated_address"
 
   cd "$project_name" || exit
 
