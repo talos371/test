@@ -33,7 +33,6 @@ printf "Loop all library projects...\n"
   printf "Delete gitlab-ci file and gitlab folder...\n"
   rm -f .gitlab-ci.yml
   rm -Rf .gitlab
-  rm -Rf .git
 
   printf "2...\n"
   pwd
