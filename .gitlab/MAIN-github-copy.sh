@@ -17,7 +17,7 @@ printf "Loop all library projects...\n"
   gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
   git clone "$gitlab_address"
 
-  # cd "$project_name" || exit
+  cd "$project_name"
 
   printf "Delete pipeline tags - if exists...\n"
   for tag in $(git tag | grep pipeline); do
@@ -33,6 +33,7 @@ printf "Loop all library projects...\n"
   printf "Delete gitlab-ci file and gitlab folder...\n"
   rm -f .gitlab-ci.yml
   rm -Rf .gitlab
+  rm -Rf .git
 
   printf "2...\n"
   pwd
