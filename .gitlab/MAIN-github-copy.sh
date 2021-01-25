@@ -29,12 +29,6 @@ printf "Loop all library projects...\n"
   rm -f .gitlab-ci.yml
   rm -Rf .gitlab
 
-  printf "Copy the new gitlab-ci file and gitlab folder...\n"
-  cp ../gitlab-pipelines/library-pipeline.yml ./.gitlab-ci.yml
-  cp -R ../gitlab-pipelines/gitlab ./.gitlab
-  chmod 755 ./.gitlab/*
-
-
   github_address="https://talos371:371Talos@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
