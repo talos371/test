@@ -19,7 +19,9 @@ printf "Loop all library projects...\n"
 
   cd "$project_name" || exit
 
+  printf "aaaa...\n"
   ls
+  printf "bbbb...\n"
 
   printf "Delete pipeline tags - if exists...\n"
   for tag in $(git tag | grep pipeline); do
