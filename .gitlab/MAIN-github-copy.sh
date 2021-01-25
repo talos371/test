@@ -21,14 +21,19 @@ printf "Loop all library projects...\n"
 
 sleep 10.0
 
-  printf "2...\n"
-
   pwd
+sleep 10.0
   ls
+sleep 10.0
   cd "$project_name" || exit
+sleep 10.0
 
   printf "3...\n"
   pwd
+sleep 10.0
+  ls
+sleep 10.0
+
   printf "4...\n"
 
   printf "Delete pipeline tags - if exists...\n"
