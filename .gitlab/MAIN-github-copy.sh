@@ -19,6 +19,8 @@ printf "Loop all library projects...\n"
 
   cd "$project_name" || exit
 
+  ls
+
   printf "Delete pipeline tags - if exists...\n"
   for tag in $(git tag | grep pipeline); do
     git tag -d "$tag"
@@ -29,7 +31,7 @@ printf "Loop all library projects...\n"
   rm -f .gitlab-ci.yml
   rm -Rf .gitlab
 
-  github_address="https://talos371:371Talos@$(echo "$github_url" | sed -e 's#https://##')"
+  github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
   git push --mirror "$github_address"
