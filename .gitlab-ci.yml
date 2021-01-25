@@ -6,7 +6,7 @@ without-tag:
   except:
     - tags
   tags:
-    - bla-blabla-blablabla-1
+    - d4s-devbox-logistic-1
   script:
     - .gitlab/MAIN-without-tag.sh
 
@@ -15,6 +15,6 @@ with-tag:
   only:
     - tags
   tags:
-    - bla-blabla-blablabla-1
+    - d4s-devbox-logistic-1
   script:
     - .gitlab/MAIN-with-tag.sh
