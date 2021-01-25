@@ -3,9 +3,6 @@
 export libraries=(
   "https://swugit1.salt-solutions.de/sce/common/github_test.git"
 )
-export services=(
-  "https://swugit1.salt-solutions.de/sce/common/github_test.git"
-)
 
 source .gitlab/common.sh
 
@@ -21,7 +18,6 @@ for project in "${libraries[@]}"; do
 
   authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
   git clone "$authenticated_address"
-  # git clone --bare "$authenticated_address"
 
   cd "$project_name" || exit
 
@@ -43,19 +39,10 @@ for project in "${libraries[@]}"; do
   printf "Commit, tag and push...\n"
   git push --mirror https://talos371:371Talos@github.com/talos371/test.git
 
-  #git remote add origin https://talos371:371Talos@github.com/talos371/test.git
-  #git config --global user.email "talos371@gmail.com"
-  #git branch -M main
-  #git add .
-  #git commit -m "Test pipeline-$(date +%s)"
-  #git tag "pipeline-$(date +%s)"
-  #git push origin master  --force
-
   cd ..
   rm -Rf "$project_name"
   printf "\n"
 done
-
 
 
 printf "\n"

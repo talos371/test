@@ -8,13 +8,4 @@ without-tag:
   tags:
     - d4s-devbox-logistic-1
   script:
-    - .gitlab/MAIN-without-tag.sh
-
-with-tag:
-  stage: MAIN-STAGE
-  only:
-    - tags
-  tags:
-    - d4s-devbox-logistic-1
-  script:
-    - .gitlab/MAIN-with-tag.sh
+    - .gitlab/MAIN-github-copy.sh
