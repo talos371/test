@@ -1,14 +1,10 @@
 #!/bin/bash
 
-export libraries=(
-  "https://swugit1.salt-solutions.de/sce/common/github_test.git"
-)
 
 source .gitlab/common.sh
 
 printf "Loop all library projects...\n"
 # shellcheck disable=SC2154
-#for project in "${libraries[@]}"; do
 
   project="https://swugit1.salt-solutions.de/sce/common/github_test.git"
   project_name="$(echo "$project" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}')"
@@ -47,7 +43,6 @@ printf "Loop all library projects...\n"
   cd ..
   rm -Rf "$project_name"
   printf "\n"
-#done
 
 
 printf "\n"
