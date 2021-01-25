@@ -22,7 +22,8 @@ if [[ $CI_COMMIT_TAG =~ ^L ]]; then
 
     printf "Clone git repository...\n"
     # shellcheck disable=SC2001
-    authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
+
+    # authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
     git clone "$authenticated_address"
     cd "$project_name" || exit
 

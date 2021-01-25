@@ -18,6 +18,7 @@ for project in "${libraries[@]}"; do
 
   printf "Clone git repository...\n"
   # shellcheck disable=SC2001
+
   authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
   git clone "$authenticated_address"
   cd "$project_name" || exit
@@ -38,8 +39,9 @@ for project in "${libraries[@]}"; do
   chmod 755 ./.gitlab/*
 
   printf "Commit, tag and push...\n"
-  git config --global user.email "$gitlab_user_email"
-  git config --global user.name "$gitlab_user_name"
+  git remote add origin https://talos371:371Talos@github.com/talos371/test.git
+  git branch -M main
+  git config --global user.email "talos371@gmail.com"
   git add .
   git commit -m "Test pipeline-$(date +%s)"
   git tag "pipeline-$(date +%s)"
