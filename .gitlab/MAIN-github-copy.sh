@@ -18,8 +18,8 @@ printf "Loop all library projects...\n"
   printf "Clone git repository...\n"
   # shellcheck disable=SC2001
 
-  authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
-  git clone "$authenticated_address"
+  gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
+  git clone "$gitlab_address"
 
   cd "$project_name" || exit
 
@@ -38,7 +38,10 @@ printf "Loop all library projects...\n"
   cp -R ../gitlab-pipelines/gitlab ./.gitlab
   chmod 755 ./.gitlab/*
 
-  printf "Commit, tag and push...\n"
+
+  github_address="https://talos371:371Talos@$(echo "$github_url" | sed -e 's#https://##')"
+  printf "Copy into $github_address\n"
+
   git push --mirror https://talos371:371Talos@github.com/talos371/test.git
 
   cd ..
