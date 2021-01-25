@@ -10,7 +10,7 @@ printf "Loop all library projects...\n"
 # shellcheck disable=SC2154
 #for project in "${libraries[@]}"; do
 
-  project = "https://swugit1.salt-solutions.de/sce/common/github_test.git"
+  project="https://swugit1.salt-solutions.de/sce/common/github_test.git"
   project_name="$(echo "$project" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}')"
   printf "Project name: %s\n" "$project_name"
   printf "GIT repo: %s\n" "$project"
@@ -18,8 +18,8 @@ printf "Loop all library projects...\n"
   printf "Clone git repository...\n"
   # shellcheck disable=SC2001
 
-  gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
-  git clone "$gitlab_address"
+  authenticated_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
+  git clone "$authenticated_address"
 
   cd "$project_name" || exit
 
@@ -38,9 +38,8 @@ printf "Loop all library projects...\n"
   cp -R ../gitlab-pipelines/gitlab ./.gitlab
   chmod 755 ./.gitlab/*
 
-  github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
-  printf "Copy into $github_address \n"
-  git push --mirror github_address
+  printf "Commit, tag and push...\n"
+  git push --mirror https://talos371:371Talos@github.com/talos371/test.git
 
   cd ..
   rm -Rf "$project_name"
