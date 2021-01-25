@@ -1,10 +1,10 @@
 #!/bin/bash
 
 export libraries=(
-  "https://swugit1.salt-solutions.de/sce/pipeline/library-simulator.git"
+  "https://swugit1.salt-solutions.de/sce/common/github_test.git"
 )
 export services=(
-  "https://swugit1.salt-solutions.de/sce/pipeline/service-simulator.git"
+  "https://swugit1.salt-solutions.de/sce/common/github_test.git"
 )
 
 source .gitlab/common.sh
