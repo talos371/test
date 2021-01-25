@@ -42,7 +42,7 @@ printf "Loop all library projects...\n"
   github_address="https://talos371:371Talos@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
-  git push --mirror https://talos371:371Talos@github.com/talos371/test.git
+  git push --mirror "$github_address"
 
   cd ..
   rm -Rf "$project_name"
