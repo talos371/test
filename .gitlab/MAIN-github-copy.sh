@@ -21,20 +21,24 @@ printf "Loop all library projects...\n"
 
 sleep 10.0
 
+  printf "2...\n"
   pwd
 sleep 10.0
-  ls
+  printf "3...\n"
+  ls -a
 sleep 10.0
+  printf "4...\n"
   cd "$project_name" || exit
 sleep 10.0
 
-  printf "3...\n"
+  printf "5...\n"
   pwd
 sleep 10.0
-  ls
+  printf "6...\n"
+  ls -a
 sleep 10.0
 
-  printf "4...\n"
+  printf "7...\n"
 
   printf "Delete pipeline tags - if exists...\n"
   for tag in $(git tag | grep pipeline); do
@@ -42,9 +46,16 @@ sleep 10.0
     git push --delete origin "$tag"
   done
 
+  printf "7...\n"
+  ls -a
+
   printf "Delete gitlab-ci file and gitlab folder...\n"
   rm -f .gitlab-ci.yml
   rm -Rf .gitlab
+
+  printf "8...\n"
+  ls -a
+
 
   github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
