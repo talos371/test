@@ -2,23 +2,12 @@
 
 # Input all project repositories with category: library
 export libraries=(
-  "https://swugit1.salt-solutions.de/sce/library/model-webservices.git"
-  "https://swugit1.salt-solutions.de/sce/library/model-ftp.git"
+  "https://swugit1.salt-solutions.de/sce/common/github_test.git"
 )
 
 # Input all project repositories with category: service
 export services=(
-  "https://swugit1.salt-solutions.de/sce/provider/fex_ws_de.git"
-  "https://swugit1.salt-solutions.de/sce/provider/geo_ws_fr.git"
-  "https://swugit1.salt-solutions.de/sce/provider/tne_ws_de.git"
-  "https://swugit1.salt-solutions.de/sce/provider/dhe_ws.git"
-  "https://swugit1.salt-solutions.de/sce/provider/rom_ws_gb.git"
-  "https://swugit1.salt-solutions.de/sce/provider/ups_de.git"
-  "https://swugit1.salt-solutions.de/sce/common/dispatcher.git"
-  "https://swugit1.salt-solutions.de/sce/common/sftp-push.git"
-  "https://swugit1.salt-solutions.de/sce/common/persistence.git"
-  "https://swugit1.salt-solutions.de/sce/common/mapper.git"
-  "https://swugit1.salt-solutions.de/sce/common/angela.git"
+  "https://swugit1.salt-solutions.de/sce/common/github_test.git"
 )
 
 source .gitlab/common.sh
