@@ -41,6 +41,8 @@ source .gitlab/common.sh
 
   git remote add github "$github_address"
   git commit -m "added my github name"
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
   git push github master -f
 
   # git push --mirror -f "$github_address"
