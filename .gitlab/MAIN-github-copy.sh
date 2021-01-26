@@ -29,20 +29,10 @@ printf "Copy into $github_address\n"
 git config --global user.email "$github_user_email"
 git config --global user.name "$github_user"
 git remote add github "$github_address"
-
-#git commit -m "$github_commit_message"
-#git push github master -f
-
-print  "Tag is:$CI_COMMIT_TAG"
-
-   git commit -m "$github_commit_message-$CI_COMMIT_TAG"
-    git tag "$CI_COMMIT_TAG"
-    git push github master --tags -f
-
-
-
+git commit -m "$github_commit_message"
+git push github master --tags -f
 
 printf "\n"
 printf "==============================================================================================================\n"
-printf "Done, all pipelines were rolled out successfully! \n"
+printf "Done, The $project_name project has successfully into GitHub($github_url) copied! \n"
 printf "==============================================================================================================\n"
