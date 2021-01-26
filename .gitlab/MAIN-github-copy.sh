@@ -7,10 +7,10 @@ printf "Project name: %s\n" "$project_name"
 printf "GIT repo: %s\n" "$project"
 
 printf "Clone git repository...\n"
-
 gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
 git clone "$gitlab_address"
 
+printf "Change directory to $project_name...\n"
 cd "$project_name" || exit
 
 printf "Delete pipeline tags - if exists...\n"
@@ -32,6 +32,7 @@ git remote add github "$github_address"
 git commit -m "$github_commit_message"
 git push github master --tags -f
 
+cd ..
 printf "\n"
 printf "==============================================================================================================\n"
 printf "Done, The $project_name project has successfully into GitHub($github_url) copied! \n"
