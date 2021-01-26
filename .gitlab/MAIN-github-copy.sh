@@ -39,8 +39,8 @@ source .gitlab/common.sh
   github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
-  git remote add origin "$github_address"
-  git push origin master
+  git remote add github "$github_address"
+  git push github master
 
   # git push --mirror -f "$github_address"
 
