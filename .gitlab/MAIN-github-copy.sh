@@ -40,7 +40,7 @@ source .gitlab/common.sh
   printf "Copy into $github_address\n"
 
   git remote add github "$github_address"
-  git push github master
+  git push github master -f
 
   # git push --mirror -f "$github_address"
 
