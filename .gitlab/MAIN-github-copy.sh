@@ -29,8 +29,11 @@ source .gitlab/common.sh
   ls -a
 
   printf "Delete gitlab-ci file and gitlab folder...\n"
-  rm -f .gitlab-ci.yml
-  rm -Rf .gitlab
+  # rm -f .gitlab-ci.yml
+  # rm -Rf .gitlab
+
+  git rm .gitlab-ci.yml
+  git rm .gitlab
 
   printf "2...\n"
   pwd
