@@ -39,10 +39,10 @@ source .gitlab/common.sh
   github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
-  git remote add github "$github_address"
-  git commit -m "added my github name"
   git config --global user.email "you@example.com"
   git config --global user.name "Your Name"
+  git remote add github "$github_address"
+  git commit -m "added my github name"
   git push github master -f
 
   # git push --mirror -f "$github_address"
