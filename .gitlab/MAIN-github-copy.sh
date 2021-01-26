@@ -33,7 +33,7 @@ source .gitlab/common.sh
   # rm -Rf .gitlab
 
   git rm .gitlab-ci.yml
-  git rm .gitlab
+  git rm -rf .gitlab
 
   printf "2...\n"
   pwd
@@ -42,10 +42,10 @@ source .gitlab/common.sh
   github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
+  # git config --global user.email "you@example.com"
+  # git config --global user.name "Your Name"
   git remote add github "$github_address"
-  git commit -m "added my github name"
+  # git commit -m "added my github name"
   git push github master -f
 
   # git push --mirror -f "$github_address"
