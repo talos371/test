@@ -16,7 +16,7 @@ source .gitlab/common.sh
   gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
   git clone "$gitlab_address"
 
-  # cd "$project_name"
+  cd "$project_name"
 
   printf "Delete pipeline tags - if exists...\n"
   for tag in $(git tag | grep pipeline); do
@@ -39,7 +39,10 @@ source .gitlab/common.sh
   github_address="https://$github_user:$github_password@$(echo "$github_url" | sed -e 's#https://##')"
   printf "Copy into $github_address\n"
 
-  git push --mirror -f "$github_address"
+  git remote add origin "$github_address"
+  git push origin master
+
+  # git push --mirror -f "$github_address"
 
 printf "\n"
 printf "==============================================================================================================\n"
