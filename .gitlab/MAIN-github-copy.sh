@@ -14,7 +14,7 @@ source .gitlab/common.sh
   # shellcheck disable=SC2001
 
   gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
-  git clone "$gitlab_address"
+  # git clone "$gitlab_address"
 
   # cd "$project_name"
 
