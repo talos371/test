@@ -3,7 +3,6 @@
 
 source .gitlab/common.sh
 
-printf "Loop all library projects...\n"
 # shellcheck disable=SC2154
 
   project="https://swugit1.salt-solutions.de/sce/common/github_test.git"
@@ -17,7 +16,7 @@ printf "Loop all library projects...\n"
   gitlab_address="https://$gitlab_user:$gitlab_token@$(echo "$project" | sed -e 's#https://##')"
   git clone "$gitlab_address"
 
-  cd "$project_name"
+  # cd "$project_name"
 
   printf "Delete pipeline tags - if exists...\n"
   for tag in $(git tag | grep pipeline); do
@@ -28,7 +27,6 @@ printf "Loop all library projects...\n"
   printf "1...\n"
   pwd
   ls -a
-
 
   printf "Delete gitlab-ci file and gitlab folder...\n"
   rm -f .gitlab-ci.yml
